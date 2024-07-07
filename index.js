@@ -18,8 +18,16 @@ const objarray = [
     "No"
 ];
 
-const mappedData = arr.map((question, index) => {
-    return { [question]: objarray[index] };
+const mappedData = arr.map((question, item) => {
+    return { [question]: objarray[item] };
 });
 
 console.log(mappedData);
+
+//works the other way too 
+
+const mappedData2 = objarray.map((answer, item) => {
+    return {[answer]: arr[item]};
+});
+
+console.log(mappedData2);
