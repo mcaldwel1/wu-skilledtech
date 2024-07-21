@@ -1,33 +1,37 @@
-const arr = [
-    "Name (First and Last)", 
-    "Gender", 
-    "Age", 
-    "What is your race?", 
-    "What is the highest degree or level of school that you have completed?", 
-    "Are you currently employed?", 
-    "Have you ever served on active duty in the U.S. Armed Forces, Reserves, or National Guard?"
-];
+const substr = "Pre-Course";
 
-const objarray = [
-    "Nina Blackshear", 
-    "Female", 
-    "63", 
-    "Black or African American", 
-    "Some college, no degree", 
-    "No", 
-    "No"
-];
+var data = [{"id":"66984a68f9dbb9614d08de16",
+    "type":"pbEbook",
+    "icon":"ebook",
+    "title":"Welcome toUnleashing the Power of AI: Empowering Educators Everywhere!",
+    "subtitle":"ebook"},
+    {"id":"66984bff0add8f175f0875af",
+        "type":"newSurvey",
+        "icon":"survey",
+        "title":"Getting to Know You",
+        "subtitle":"Introduce yourself"},
+        {"id":"6697bcff68908739df06b18a",
+            "type":"pdf",
+            "icon":"pdf",
+            "title":"Meet the Instructors","subtitle":"pdf"},
+            {"id":"6697bcff68908739df06b18c",
+                "type":"assessmentV2",
+                "icon":"quiz",
+                "title":"Pre-Course Assessment",
+                "subtitle":"Self-Assessment"}];
 
-const mappedData = arr.map((question, item) => {
-    return { [question]: objarray[item] };
-});
+var result = data.filter(function getPreCourse(data) {return data.title.includes(substr)});
 
-console.log(mappedData);
+console.log(result);
+console.log(result[0].id);
 
-//works the other way too 
+return result[0].id;
 
-const mappedData2 = objarray.map((answer, item) => {
-    return {[answer]: arr[item]};
-});
+/*function getPreCourse(data, reg) {
+    return data.filter(
+        function(reg, data) {return reg.includes(data.title)}
+    );
+}
 
-console.log(mappedData2);
+const result = getPreCourse(data, substr);
+console.log(result);*/
