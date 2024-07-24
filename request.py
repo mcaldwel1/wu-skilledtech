@@ -36,7 +36,9 @@ courseArray = [
 ]
 
 course_Length = len(courseArray)
-c = 12
+c = 5
+
+preArray = []
 
 def get_new_url(): 
     if(c < course_Length):
@@ -51,13 +53,26 @@ response = requests.get(url=fetchUrl,
              "Lw-Client": "647a25ef09b3e9a6f00aa290",
              "Accept": "application/json"})
 
-parsed = json.loads(response.text)
+"""parsed = json.loads(response.text)"""
+parsed = response.json()
 
-def get_id():
-    ("Pre-Course" in parsed)
+def get_id(data):
+    if("Pre-Course" in data): return data
 
-result = filter(get_id(), parsed)
-filtered = list(result)
+"""result = filter(get_id(parsed['sections'][0]['learningUnits']), parsed)
+filtered = list(result)"""
 
-print(parsed['sections'][0]['title'])
-print(filtered)
+keyArray = []
+
+for item in list(parsed['sections'][0]['learningUnits'][0].keys()):
+    keyArray.append(item)
+
+for item in keyArray:
+    i=0
+    for y in parsed['sections'][0]['learningUnits']:
+        if(get_id(parsed['sections'][0]['learningUnits'][i][item])):
+            preArray.append((parsed['sections'][0]['learningUnits'][i]['id']))
+        i+=1
+
+print(preArray)
+print(keyArray)
