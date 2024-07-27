@@ -96,19 +96,22 @@ for a in parsed['sections']:
     for b in a:
         if(a[b] and "Pre-Course" in a[b]):
                 print(a['id'])
+                print(a['learningUnits'][0]['id'])
         if(a[b] and b == 'learningUnits'):
-            for item in keyArray:
-                if(a[b][0][item] and "Pre-Course" in a[b][0][item]):
-                    print(a[b][0]['id'])
-                    print(a[b]['title'])
-                    print('fuck you')
-        for item in sectionArray:
-            """if([y][item]):
-                if(get_id([y][item])):
-                    preArray.append(get_id([y]['id']))"""
+             i=0
+             for unit in a[b]:
+                for item in keyArray:
+                    if(a[b][i][item] and "Pre-Course" in a[b][i][item]):
+                        print(a.items())
+                        print(a[b][i]['id'])
+                        print(a[b][i]['title'])
+                i+=1
 
-"""for x in result:
-    print(x)"""
+"""for a in parsed['sections']:
+    for b in a:
+        if(a[b] and "Pre-Course" in a[b]):
+            print(a[b].keys())"""
+
 print(len(parsed['sections']))
 print(len(keyArray))
 print(c)
