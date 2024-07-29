@@ -36,82 +36,119 @@ courseArray = [
 ]
 
 course_Length = len(courseArray)
-c = 16
+c = 0
+
+def get_new_url(index, length, arr): 
+    if(index < length):
+        return arr[index]
+    else: 
+        return arr[0]
 
 preArray = []
 
-def get_new_url(): 
-    if(c < course_Length):
-        return courseArray[c] + "/contents"
-    else: 
-        return courseArray[0] + "/contents"
+while c < course_Length:
 
-fetchUrl = "https://www.wu-skilledtech.com/admin/api/v2/courses/" + get_new_url()
+    fetchUrl = "https://www.wu-skilledtech.com/admin/api/v2/courses/" + get_new_url(c, course_Length, courseArray) + "/contents"
 
-response = requests.get(url=fetchUrl, 
-    headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
-            "Lw-Client": "647a25ef09b3e9a6f00aa290",
-            "Accept": "application/json"})
+    response = requests.get(url=fetchUrl, 
+        headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
+                "Lw-Client": "647a25ef09b3e9a6f00aa290",
+                "Accept": "application/json"})
 
-"""parsed = json.loads(response.text)"""
-parsed = response.json()
+    parsed = response.json()
 
-def get_id(data1, sect):
-    for sect in data1:
-        if(data1[sect] == None):
-            data1[sect] == 0.1
+    def get_id(data1, sect):
+        for sect in data1:
+            if(data1[sect] == None):
+                data1[sect] == 0.1
+            else:
+                if("Pre-Course" in data1[sect]): return True
+
+    keyArray = []
+    sectionArray = []
+
+    if(parsed['sections'][0]['learningUnits']):
+        for item in list(parsed['sections'][0]['learningUnits'][0].keys()):
+            keyArray.append(item)
+
+    if(parsed['sections'][0]):
+        for item in list(parsed['sections'][0].keys()):
+            sectionArray.append(item)
+
+    for a in parsed['sections']:
+        for b in a:
+            if(a[b] and "Pre-Course" in a[b]):
+                """print(a['id'])
+                print(a['learningUnits'][0]['id'])"""
+                preArray.append(a['learningUnits'][0]['id'])
+            if(a[b] and b == 'learningUnits'):
+                i=0
+                for unit in a[b]:
+                    for item in keyArray:
+                        if(a[b][i][item] and "Pre-Course" in a[b][i][item]):
+                            """print(a[b][i]['id'])
+                            print(a[b][i]['title'])"""
+                            preArray.append(a[b][i]['id'])
+                    i+=1
+    c+=1
+
+def find_duplicates(arr):
+    seen = set()
+    duplicates = set()
+    
+    for item in arr:
+        if item in seen:
+            duplicates.add(item)
         else:
-            if("Pre-Course" in data1[sect]): return True
+            seen.add(item)
+    
+    return list(duplicates)
 
-"""for y in parsed['sections'][0]['learningUnits']:
-    i=0
-    result = filter(get_id(parsed['sections'][i]['learningUnits']), parsed['sections'][i]['learningUnits'])
-    filtered = list(result)
-    i+=1"""
+def remove_duplicates(arr, main):
+    for a in arr:
+        for b in main:
+            if(b == a): main.pop(main.index(b))
+    return main
 
-keyArray = []
-sectionArray = []
+preArray = remove_duplicates(find_duplicates(preArray), preArray)
+print(preArray)
 
-if(parsed['sections'][0]['learningUnits']):
-    for item in list(parsed['sections'][0]['learningUnits'][0].keys()):
-        keyArray.append(item)
+id_length = len(preArray)
 
-print(keyArray)
+false_list = []
+d=0
 
-if(parsed['sections'][0]):
-    for item in list(parsed['sections'][0].keys()):
-        sectionArray.append(item)
+while d < id_length:
+    fetchUrl_2 = "https://www.wu-skilledtech.com/admin/api/v2/assessments/" + get_new_url(d, id_length, preArray) + "/responses"
 
-valArray =[]
+    response = requests.get(url=fetchUrl_2, 
+        headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
+                "Lw-Client": "647a25ef09b3e9a6f00aa290",
+                "Accept": "application/json"})
 
-for y in parsed['sections'][0]['learningUnits']:
-    i=0
-    for item in keyArray:
-        if(parsed['sections'][0]['learningUnits'][i]):
-            valArray.append(parsed['sections'][0]['learningUnits'][i][item])
-    i+=1
+    parsed = response.json()
 
-for a in parsed['sections']:
-    """if(a == parsed['sections'][0]): print(a['id'])"""
-    for b in a:
-        if(a[b] and "Pre-Course" in a[b]):
-                print(a['id'])
-                print(a['learningUnits'][0]['id'])
-        if(a[b] and b == 'learningUnits'):
-             i=0
-             for unit in a[b]:
-                for item in keyArray:
-                    if(a[b][i][item] and "Pre-Course" in a[b][i][item]):
-                        print(a.items())
-                        print(a[b][i]['id'])
-                        print(a[b][i]['title'])
-                i+=1
+    if(not response): 
+        false_list.append(d)
+    
+    if(response):
+        if("Name" in (parsed['data'][0]['answers'][0]['description'])):
+            print(parsed['data'][0]['answers'][0]['answer'])
 
-"""for a in parsed['sections']:
-    for b in a:
-        if(a[b] and "Pre-Course" in a[b]):
-            print(a[b].keys())"""
+    d+=1
 
-print(len(parsed['sections']))
-print(len(keyArray))
-print(c)
+index = (len(false_list) - 1)
+for a in false_list:
+    preArray.pop(false_list[index])
+    index-= 1
+
+print("\n", preArray)
+
+
+
+
+
+
+
+
+
