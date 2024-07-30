@@ -1,5 +1,6 @@
 import requests 
 import json
+import re
 
 courseArray = [
     "powerofai", 
@@ -118,8 +119,8 @@ id_length = len(preArray)
 false_list = []
 d=0
 
-while d < id_length:
-    fetchUrl_2 = "https://www.wu-skilledtech.com/admin/api/v2/assessments/" + get_new_url(d, id_length, preArray) + "/responses"
+def make_call(index, i, length, array):
+    fetchUrl_2 = "https://www.wu-skilledtech.com/admin/api/v2/assessments/" + get_new_url(i, length, array) + "/responses"
 
     response = requests.get(url=fetchUrl_2, 
         headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
@@ -128,14 +129,23 @@ while d < id_length:
 
     parsed = response.json()
 
-    if(not response): 
-        false_list.append(d)
+    if(not response):
+        false_list.append(index)
+
+    return parsed
+
+
+while d < id_length:
+    parsed = make_call(d, d, id_length, preArray)
     
-    if(response):
-        if("Name" in (parsed['data'][0]['answers'][0]['description'])):
-            print(parsed['data'][0]['answers'][0]['answer'])
+    """if(response):
+        for a in parsed['data']:
+            if("Name" in (a['answers'][0]['description'])):
+                print(a['answers'][0]['answer'])"""
 
     d+=1
+
+print(false_list)
 
 index = (len(false_list) - 1)
 for a in false_list:
@@ -143,6 +153,30 @@ for a in false_list:
     index-= 1
 
 print("\n", preArray)
+
+e=0
+for a in preArray:
+    ay = preArray
+    result = make_call(ay.index(a), ay.index(a), len(ay), ay)
+    for b in result['data']:
+        for c in b['answers']:
+            if(re.match(r'.*[Nn]ame$|.*[Ff]irst and [Ll]ast', (c['description']))):
+                print(c['answer'])
+            """if(re.match(r'[Aa]ge', (c['description']))):
+                print(c['answer'])
+            if(re.match(r'[Gg]ender', (c['description']))):
+                print(c['answer'])"""
+            if(re.match(r'.*[Rr]ace', (c['description']))):
+                print(c['answer'])
+            """if(re.match(r'.*[Ss]chool|[Ee]ducation', (c['description']))):
+                print(c['answer'])
+            if(re.match(r'.*[Cc]urrently [Ee]mployed', (c['description']))): 
+                print(c['answer'])
+            if(re.match(r'.*[Aa]ctive [Dd]uty', (c['description']))): 
+                print(c['answer'])"""
+        
+
+
 
 
 
