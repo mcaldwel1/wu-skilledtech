@@ -154,32 +154,59 @@ for a in false_list:
 
 print("\n", preArray)
 
-e=0
+participant_arr = []
+
+class participant:
+    def __init__(self, name, age, gender, race, education, employment_status, served):
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.race = race
+        self.education = education
+        self.employment_status = employment_status
+        self.served = served
+
+def make_p():
+    p = participant("a", 0, "a", "a", "a", "a", "a")
+    return p
+
+
 for a in preArray:
     ay = preArray
     result = make_call(ay.index(a), ay.index(a), len(ay), ay)
     for b in result['data']:
+        pa = make_p()
+        flag = 0
         for c in b['answers']:
             if(re.match(r'.*[Nn]ame$|.*[Ff]irst and [Ll]ast', (c['description']))):
-                print(c['answer'])
-            """if(re.match(r'[Aa]ge', (c['description']))):
-                print(c['answer'])
+                pa.name = c['answer']
+                flag+=1
+            if(re.match(r'[Aa]ge', (c['description']))):
+                pa.age = c['answer']
+                flag+=1
             if(re.match(r'[Gg]ender', (c['description']))):
-                print(c['answer'])"""
+                pa.gender = c['answer']
+                flag+=1
             if(re.match(r'.*[Rr]ace', (c['description']))):
-                print(c['answer'])
-            """if(re.match(r'.*[Ss]chool|[Ee]ducation', (c['description']))):
-                print(c['answer'])
+                pa.race = c['answer']
+                flag+=1
+            if(re.match(r'.*[Ss]chool|[Ee]ducation', (c['description']))):
+                pa.education = c['answer']
+                flag+=1
             if(re.match(r'.*[Cc]urrently [Ee]mployed', (c['description']))): 
-                print(c['answer'])
+                pa.employment_status = c['answer']
+                flag+=1
             if(re.match(r'.*[Aa]ctive [Dd]uty', (c['description']))): 
-                print(c['answer'])"""
-        
+                pa.served = c['answer']
+                flag+=1
 
+        if(flag == 7): participant_arr.append(pa)
 
+print(len(participant_arr))
 
-
-
+for index1 in participant_arr:
+    obj_list = ({index1.name, index1.age, index1.gender, index1.race, index1.education, index1.employment_status, index1.served})
+    print(obj_list)
 
 
 
