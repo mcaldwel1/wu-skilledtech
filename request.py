@@ -5,15 +5,12 @@ import re
 courseArray = [
     "powerofai", 
     "doverdata", 
-    "appliediotmay2024", 
-    "iotfundamentalsshell", 
+    "appliediotmay2024",  
     "iotfundamentalsmay2024", 
     "mpm365sb", 
     "ai4-product-managers", 
     "iotfapril2024", 
     "cfda1", 
-    "appliediotsolutions", 
-    "iotsolutions", 
     "iotfundamentals", 
     "gradallmsexcel2", 
     "advanced-cybersecurity-and-future-trends", 
@@ -105,14 +102,17 @@ def find_duplicates(arr):
     
     return list(duplicates)
 
+print("\n", "duplicates: ", find_duplicates(preArray))
+
 def remove_duplicates(arr, main):
     for a in arr:
         for b in main:
             if(b == a): main.pop(main.index(b))
     return main
 
+print("\n", preArray)
 preArray = remove_duplicates(find_duplicates(preArray), preArray)
-print(preArray)
+print("\n", preArray)
 
 id_length = len(preArray)
 
@@ -145,7 +145,7 @@ while d < id_length:
 
     d+=1
 
-print(false_list)
+print("\n", "list of no response surveys: ", false_list)
 
 index = (len(false_list) - 1)
 for a in false_list:
@@ -165,6 +165,9 @@ class participant:
         self.education = education
         self.employment_status = employment_status
         self.served = served
+    
+    def format_json(self):
+        return json.dumps(self.__dict__, indent=4)
 
 def make_p():
     p = participant("a", 0, "a", "a", "a", "a", "a")
@@ -204,9 +207,19 @@ for a in preArray:
 
 print(len(participant_arr))
 
-for index1 in participant_arr:
-    obj_list = ({index1.name, index1.age, index1.gender, index1.race, index1.education, index1.employment_status, index1.served})
-    print(obj_list)
+json_arr = []
+
+for a in participant_arr:
+    a = a.format_json()
+    json_arr.append(a)
+
+"""print(*json_arr, sep='\n')"""
+
+data_file = open("data.json", 'w')
+for x in json_arr:
+    data_file.write(x)
+data_file.close()
+
 
 
 
