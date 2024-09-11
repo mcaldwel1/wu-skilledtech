@@ -2,36 +2,16 @@ import requests
 import json
 import re
 
-courseArray = [
-    "powerofai", 
-    "doverdata", 
-    "appliediotmay2024",  
-    "iotfundamentalsmay2024", 
-    "mpm365sb", 
-    "ai4-product-managers", 
-    "iotfapril2024", 
-    "cfda1", 
-    "iotfundamentals", 
-    "gradallmsexcel2", 
-    "advanced-cybersecurity-and-future-trends", 
-    "cybersecurity-fundamentals", 
-    "computer-programming-fundamentals", 
-    "jsmo", 
-    "mactdpwcpb", 
-    "mactdpwcp", 
-    "mac365", 
-    "excelbasic", 
-    "upltd", 
-    "timken-steel-data-analytics-ii", 
-    "ican", 
-    "test4", 
-    "gwmsoffice", 
-    "psgoodwill", 
-    "psmt", 
-    "tsda", 
-    "msoffice", 
-    "stw-job-skills-c"
-]
+courseArray = []
+
+response = requests.get(url="https://www.wu-skilledtech.com/admin/api/v2/courses", 
+    headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
+            "Lw-Client": "647a25ef09b3e9a6f00aa290",
+            "Accept": "application/json"})
+prsd = response.json()
+
+for a in (prsd['data']):
+    courseArray.append(a['id'])
 
 course_Length = len(courseArray)
 c = 0
@@ -55,6 +35,11 @@ while c < course_Length:
 
     parsed = response.json()
 
+    if('error' in parsed):
+        courseArray.pop(c)
+        course_Length -=1
+        continue
+
     def get_id(data1, sect):
         for sect in data1:
             if(data1[sect] == None):
@@ -75,20 +60,20 @@ while c < course_Length:
 
     for a in parsed['sections']:
         for b in a:
-            if(a[b] and "Pre-Course" in a[b]):
-                """print(a['id'])
-                print(a['learningUnits'][0]['id'])"""
+            if(a[b] and 'Pre-Course' in a[b]):
                 preArray.append(a['learningUnits'][0]['id'])
             if(a[b] and b == 'learningUnits'):
                 i=0
                 for unit in a[b]:
                     for item in keyArray:
-                        if(a[b][i][item] and "Pre-Course" in a[b][i][item]):
-                            """print(a[b][i]['id'])
-                            print(a[b][i]['title'])"""
+                        if(a[b][i][item] and 'Pre-Course' in a[b][i][item]):
                             preArray.append(a[b][i]['id'])
                     i+=1
     c+=1
+
+print(*courseArray, sep="\n")
+
+print('\n', preArray)
 
 def find_duplicates(arr):
     seen = set()
@@ -137,12 +122,6 @@ def make_call(index, i, length, array):
 
 while d < id_length:
     parsed = make_call(d, d, id_length, preArray)
-    
-    """if(response):
-        for a in parsed['data']:
-            if("Name" in (a['answers'][0]['description'])):
-                print(a['answers'][0]['answer'])"""
-
     d+=1
 
 print("\n", "list of no response surveys: ", false_list)
@@ -172,7 +151,6 @@ class participant:
 def make_p():
     p = participant("a", 0, "a", "a", "a", "a", "a")
     return p
-
 
 for a in preArray:
     ay = preArray
@@ -213,13 +191,10 @@ for a in participant_arr:
     a = a.format_json()
     json_arr.append(a)
 
-"""print(*json_arr, sep='\n')"""
-
 data_file = open("data.json", 'w')
 for x in json_arr:
     data_file.write(x)
 data_file.close()
-
 
 
 

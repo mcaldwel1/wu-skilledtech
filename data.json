@@ -183,6 +183,14 @@
     "employment_status": "Yes, full time",
     "served": "No"
 }{
+    "name": "Richard Morris",
+    "age": "34",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+}{
     "name": "Alex Gerber",
     "age": "26",
     "gender": "Male",
@@ -412,14 +420,6 @@
     "gender": "Female",
     "race": "Black or African American",
     "education": "Some college, no degree",
-    "employment_status": "No",
-    "served": "No"
-}{
-    "name": "Alvita Smith",
-    "age": "40",
-    "gender": "Female",
-    "race": "Black or African American",
-    "education": "GED or HiSET",
     "employment_status": "No",
     "served": "No"
 }{
