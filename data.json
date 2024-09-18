@@ -1,669 +1,670 @@
 {
     "foo" : [
-        {
-            "name": "Nina Blackshear",
-            "age": "63",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "jordan miller",
-            "age": "26",
-            "gender": "Male",
-            "race": "Native American or Alaskan Native",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Nate Johnston",
-            "age": "29",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Marlene Sullenberger",
-            "age": "55",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Bachelor's Degree",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Charmaine Ray",
-            "age": "67",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Bachelor's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Keith Bialota",
-            "age": "58",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, full time",
-            "served": "Yes"
-        },{
-            "name": "jordan miller",
-            "age": "26",
-            "gender": "Male",
-            "race": "Native American or Alaskan Native",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Erich Mutchler",
-            "age": "58",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "Bachelor's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Alecia Alspach",
-            "age": "54",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Nina Blackshear",
-            "age": "63",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Nate Johnston",
-            "age": "29",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Kate koch",
-            "age": "26",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Nancy Hancox",
-            "age": "25",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Associate's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Charmaine Ray",
-            "age": "67",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Melanie Wolf",
-            "age": "39",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Associate's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Elizabeth Fenstemaker",
-            "age": "60",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "GED or HiSET",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Marlene Sullenberger",
-            "age": "55",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Bachelor's Degree",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Amanda Morgan-Ouma",
-            "age": "44",
-            "gender": "Female",
-            "race": null,
-            "education": "Bachelor's Degree",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "Ashley Blake",
-            "age": "42",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Kristin Seefong",
-            "age": "37",
-            "gender": "Female",
-            "race": "Native American or Alaskan Native",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "C S",
-            "age": "52",
-            "gender": "Female",
-            "race": null,
-            "education": "Bachelor's Degree",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "Matthew Nolf",
-            "age": "30",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "GED or HiSET",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Michelle Grimm",
-            "age": "55",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Associate's Degree",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "Richard Morris",
-            "age": "34",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Alex Gerber",
-            "age": "26",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Jelani Williams",
-            "age": "28",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Tana casey",
-            "age": "39",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Alvinae Duncanson",
-            "age": "26",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "Yes"
-        },{
-            "name": "Tana Casey",
-            "age": "39",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Christine Lamborn",
-            "age": "60",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Carol Wheelock",
-            "age": "55",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Associate's Degree",
-            "employment_status": "Yes, part time",
-            "served": "Yes"
-        },{
-            "name": "Chevonne McCallum",
-            "age": "54",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Kevin Wallace",
-            "age": "22",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Cierra Lackey",
-            "age": "22",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Jerome Cox",
-            "age": "50",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Margaret Morris",
-            "age": "68",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Eugene Tate",
-            "age": "40",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Associate's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "mikaylah morris",
-            "age": "18",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Brouhklynn",
-            "age": "18",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Robert Morris",
-            "age": "35",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Charles L. Yancey II",
-            "age": "41",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Cherell Miller",
-            "age": "38",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "GED or HiSET",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Lakea Ballog",
-            "age": "33",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "GED or HiSET",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "Christa Lab",
-            "age": "35",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Associate's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Michael swogger",
-            "age": "21",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Orlando Dewitt",
-            "age": "48",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "GED or HiSET",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Vanessa Peters",
-            "age": "41",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "None of the above",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Ashley Leggett",
-            "age": "37",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "None of the above",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "Oneisha venson",
-            "age": "28",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "Jalissa smith",
-            "age": "31",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Kaylee Blackshear",
-            "age": "21",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "None of the above",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Brandon Boller",
-            "age": "25",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Tiana Walker",
-            "age": "24",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Malita Brown",
-            "age": "49",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Richard Morris",
-            "age": "34",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Shyanna Stokes",
-            "age": "21",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, part time",
-            "served": "Yes"
-        },{
-            "name": "Michael Simms",
-            "age": "40",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "Bachelor's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "shelby",
-            "age": "26",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Alex Gerber",
-            "age": "26",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "jelani williams",
-            "age": "28",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Stephanie Spence",
-            "age": "50",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Associate's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Alvinae Duncanson",
-            "age": "26",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "Yes"
-        },{
-            "name": "Chevonne McCallum",
-            "age": "54",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Joshua Wengerd",
-            "age": "25",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "Carol Wheelock",
-            "age": "55",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Associate's Degree",
-            "employment_status": "Yes, part time",
-            "served": "Yes"
-        },{
-            "name": "Kevin Wallace",
-            "age": "22",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "None of the above",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Margaret Morris",
-            "age": "68",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Alexander Stevens",
-            "age": "31",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Eugene Tate",
-            "age": "40",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "Associate's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Jerome Cox",
-            "age": "50",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Cierra Lackey",
-            "age": "22",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Brouhklynn Adams",
-            "age": "18",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Mikaylah Morris",
-            "age": "18",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Robert Morris",
-            "age": "35",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Christine Lamborn",
-            "age": "60",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Tana Casey",
-            "age": "38",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "High School Diploma",
-            "employment_status": "Yes, part time",
-            "served": "No"
-        },{
-            "name": "Aleigha Johnson",
-            "age": "29",
-            "gender": "Female",
-            "race": "White or Caucasian",
-            "education": "None of the above",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Cherell miller",
-            "age": "38",
-            "gender": "Female",
-            "race": "Black or African American",
-            "education": "GED or HiSET",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Taylor Riggs",
-            "age": "33",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "Bachelor's Degree",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Mark Anderson",
-            "age": "42",
-            "gender": "Male",
-            "race": "White or Caucasian",
-            "education": "Some college, no degree",
-            "employment_status": "Yes, full time",
-            "served": "No"
-        },{
-            "name": "Cedric Graves",
-            "age": "44",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "GED or HiSET",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "conrad strader",
-            "age": "18",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "High School Diploma",
-            "employment_status": "No",
-            "served": "No"
-        },{
-            "name": "Charles L. Yancey II",
-            "age": "41",
-            "gender": "Male",
-            "race": "Black or African American",
-            "education": "Some college, no degree",
-            "employment_status": "No",
-            "served": "No"
-        }
+        
+{
+    "name": "Nina Blackshear",
+    "age": "63",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "jordan miller",
+    "age": "26",
+    "gender": "Male",
+    "race": "Native American or Alaskan Native",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Nate Johnston",
+    "age": "29",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Marlene Sullenberger",
+    "age": "55",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Bachelor's Degree",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Charmaine Ray",
+    "age": "67",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Bachelor's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Keith Bialota",
+    "age": "58",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, full time",
+    "served": "Yes"
+},{
+    "name": "jordan miller",
+    "age": "26",
+    "gender": "Male",
+    "race": "Native American or Alaskan Native",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Erich Mutchler",
+    "age": "58",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "Bachelor's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Alecia Alspach",
+    "age": "54",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Nina Blackshear",
+    "age": "63",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Nate Johnston",
+    "age": "29",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Kate koch",
+    "age": "26",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Nancy Hancox",
+    "age": "25",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Associate's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Charmaine Ray",
+    "age": "67",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Melanie Wolf",
+    "age": "39",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Associate's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Elizabeth Fenstemaker",
+    "age": "60",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "GED or HiSET",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Marlene Sullenberger",
+    "age": "55",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Bachelor's Degree",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Amanda Morgan-Ouma",
+    "age": "44",
+    "gender": "Female",
+    "race": null,
+    "education": "Bachelor's Degree",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Ashley Blake",
+    "age": "42",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Kristin Seefong",
+    "age": "37",
+    "gender": "Female",
+    "race": "Native American or Alaskan Native",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "C S",
+    "age": "52",
+    "gender": "Female",
+    "race": null,
+    "education": "Bachelor's Degree",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Matthew Nolf",
+    "age": "30",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "GED or HiSET",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Michelle Grimm",
+    "age": "55",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Associate's Degree",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Richard Morris",
+    "age": "34",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Alex Gerber",
+    "age": "26",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Jelani Williams",
+    "age": "28",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Tana casey",
+    "age": "39",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Alvinae Duncanson",
+    "age": "26",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "Yes"
+},{
+    "name": "Tana Casey",
+    "age": "39",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Christine Lamborn",
+    "age": "60",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Carol Wheelock",
+    "age": "55",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Associate's Degree",
+    "employment_status": "Yes, part time",
+    "served": "Yes"
+},{
+    "name": "Chevonne McCallum",
+    "age": "54",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Kevin Wallace",
+    "age": "22",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Cierra Lackey",
+    "age": "22",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Jerome Cox",
+    "age": "50",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Margaret Morris",
+    "age": "68",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Eugene Tate",
+    "age": "40",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Associate's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "mikaylah morris",
+    "age": "18",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Brouhklynn",
+    "age": "18",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Robert Morris",
+    "age": "35",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Charles L. Yancey II",
+    "age": "41",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Cherell Miller",
+    "age": "38",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "GED or HiSET",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Lakea Ballog",
+    "age": "33",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "GED or HiSET",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Christa Lab",
+    "age": "35",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Associate's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Michael swogger",
+    "age": "21",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Orlando Dewitt",
+    "age": "48",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "GED or HiSET",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Vanessa Peters",
+    "age": "41",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "None of the above",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Ashley Leggett",
+    "age": "37",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "None of the above",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Oneisha venson",
+    "age": "28",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Jalissa smith",
+    "age": "31",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Kaylee Blackshear",
+    "age": "21",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "None of the above",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Brandon Boller",
+    "age": "25",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Tiana Walker",
+    "age": "24",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Malita Brown",
+    "age": "49",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Richard Morris",
+    "age": "34",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Shyanna Stokes",
+    "age": "21",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, part time",
+    "served": "Yes"
+},{
+    "name": "Michael Simms",
+    "age": "40",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "Bachelor's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "shelby",
+    "age": "26",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Alex Gerber",
+    "age": "26",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "jelani williams",
+    "age": "28",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Stephanie Spence",
+    "age": "50",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Associate's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Alvinae Duncanson",
+    "age": "26",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "Yes"
+},{
+    "name": "Chevonne McCallum",
+    "age": "54",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Joshua Wengerd",
+    "age": "25",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Carol Wheelock",
+    "age": "55",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Associate's Degree",
+    "employment_status": "Yes, part time",
+    "served": "Yes"
+},{
+    "name": "Kevin Wallace",
+    "age": "22",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "None of the above",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Margaret Morris",
+    "age": "68",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Alexander Stevens",
+    "age": "31",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Eugene Tate",
+    "age": "40",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "Associate's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Jerome Cox",
+    "age": "50",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Cierra Lackey",
+    "age": "22",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Brouhklynn Adams",
+    "age": "18",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Mikaylah Morris",
+    "age": "18",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Robert Morris",
+    "age": "35",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Christine Lamborn",
+    "age": "60",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Tana Casey",
+    "age": "38",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "High School Diploma",
+    "employment_status": "Yes, part time",
+    "served": "No"
+},{
+    "name": "Aleigha Johnson",
+    "age": "29",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "None of the above",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Cherell miller",
+    "age": "38",
+    "gender": "Female",
+    "race": "Black or African American",
+    "education": "GED or HiSET",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Taylor Riggs",
+    "age": "33",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "Bachelor's Degree",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Mark Anderson",
+    "age": "42",
+    "gender": "Male",
+    "race": "White or Caucasian",
+    "education": "Some college, no degree",
+    "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Cedric Graves",
+    "age": "44",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "GED or HiSET",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "conrad strader",
+    "age": "18",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "High School Diploma",
+    "employment_status": "No",
+    "served": "No"
+},{
+    "name": "Charles L. Yancey II",
+    "age": "41",
+    "gender": "Male",
+    "race": "Black or African American",
+    "education": "Some college, no degree",
+    "employment_status": "No",
+    "served": "No"
+}
     ]
 }

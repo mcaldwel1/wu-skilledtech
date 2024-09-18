@@ -131,6 +131,7 @@ for a in false_list:
 
 print("\n", preArray)
 
+global participant_arr
 participant_arr = []
 
 class participant:
