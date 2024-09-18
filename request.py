@@ -71,9 +71,9 @@ while c < course_Length:
                     i+=1
     c+=1
 
-print(*courseArray, sep="\n")
+"""print(*courseArray, sep="\n")"""
 
-print('\n', preArray)
+"""print('\n', preArray)"""
 
 def find_duplicates(arr):
     seen = set()
@@ -95,9 +95,7 @@ def remove_duplicates(arr, main):
             if(b == a): main.pop(main.index(b))
     return main
 
-print("\n", preArray)
 preArray = remove_duplicates(find_duplicates(preArray), preArray)
-print("\n", preArray)
 
 id_length = len(preArray)
 
@@ -190,11 +188,16 @@ json_arr = []
 for a in participant_arr:
     a = a.format_json()
     json_arr.append(a)
+    
 
-data_file = open("data.json", 'w')
+data_file = open('data.json', 'w')
 for x in json_arr:
     data_file.write(x)
+    data_file.write(",")
 data_file.close()
+
+
+
 
 
 
