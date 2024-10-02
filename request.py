@@ -87,7 +87,7 @@ def find_duplicates(arr):
     
     return list(duplicates)
 
-print("\n", "duplicates: ", find_duplicates(preArray))
+"""print("\n", "duplicates: ", find_duplicates(preArray))"""
 
 def remove_duplicates(arr, main):
     for a in arr:
@@ -122,14 +122,14 @@ while d < id_length:
     parsed = make_call(d, d, id_length, preArray)
     d+=1
 
-print("\n", "list of no response surveys: ", false_list)
+"""print("\n", "list of no response surveys: ", false_list)"""
 
 index = (len(false_list) - 1)
 for a in false_list:
     preArray.pop(false_list[index])
     index-= 1
 
-print("\n", preArray)
+"""print("\n", preArray)"""
 
 global participant_arr
 participant_arr = []
@@ -168,7 +168,10 @@ for a in preArray:
                 pa.gender = c['answer']
                 flag+=1
             if(re.match(r'.*[Rr]ace', (c['description']))):
-                pa.race = c['answer']
+                if(c['answer']):
+                    pa.race = c['answer']
+                else:
+                    pa.race = 'not specified'
                 flag+=1
             if(re.match(r'.*[Ss]chool|[Ee]ducation', (c['description']))):
                 pa.education = c['answer']
