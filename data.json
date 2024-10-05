@@ -1,4 +1,118 @@
 {
+"data" : [
+{
+    "name": "Larry Collins",
+    "age": "57",
+    "gender": "Male",
+    "race": "White",
+    "education": "Associates degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Tony Breehl",
+    "age": "52",
+    "gender": "Male",
+    "race": "White",
+    "education": "some college credit, no degree",
+    "employment_status": "a",
+    "served": "Yes"
+},{
+    "name": "Gary Scott",
+    "age": "56",
+    "gender": "Male",
+    "race": "White",
+    "education": "some college credit, no degree",
+    "employment_status": "a",
+    "served": "Yes"
+},{
+    "name": "Renee Sanders",
+    "age": "49",
+    "gender": "Female",
+    "race": "White",
+    "education": "Bachelor's degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Mike Fisher",
+    "age": "38",
+    "gender": "Male",
+    "race": "White",
+    "education": "some college credit, no degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Carey Moore",
+    "age": "45",
+    "gender": "Female",
+    "race": "White",
+    "education": "Bachelor's degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Frances Terazzi",
+    "age": "49",
+    "gender": "Female",
+    "race": "White",
+    "education": "some college credit, no degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Trace Ricketts",
+    "age": "25",
+    "gender": "Male",
+    "race": "White",
+    "education": "Bachelor's degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Patrick Graham",
+    "age": "50",
+    "gender": "Male",
+    "race": "White",
+    "education": "some college credit, no degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Stephanie Norman",
+    "age": "31",
+    "gender": "Female",
+    "race": "White",
+    "education": "Bachelor's degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Anthony zombeck",
+    "age": "22",
+    "gender": "Male",
+    "race": "White",
+    "education": "high school diploma",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Tyler Schweitzer",
+    "age": "32",
+    "gender": "Male",
+    "race": "White",
+    "education": "Bachelor's degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Damon Gould",
+    "age": "60",
+    "gender": "Male",
+    "race": "White",
+    "education": "some college credit, no degree",
+    "employment_status": "a",
+    "served": "No"
+},{
+    "name": "Alonzo Parrish",
+    "age": "36",
+    "gender": "Male",
+    "race": "White",
+    "education": "Bachelor's degree",
+    "employment_status": "a",
+    "served": "No"
+},{
     "name": "Nina Blackshear",
     "age": "63",
     "gender": "Female",
@@ -181,6 +295,14 @@
     "race": "White or Caucasian",
     "education": "Associate's Degree",
     "employment_status": "Yes, full time",
+    "served": "No"
+},{
+    "name": "Kerstin Covert",
+    "age": "37",
+    "gender": "Female",
+    "race": "White or Caucasian",
+    "education": "Some college, no degree",
+    "employment_status": "No",
     "served": "No"
 },{
     "name": "Jordan Morris",
@@ -413,14 +535,6 @@
     "race": "Black or African American",
     "education": "Some college, no degree",
     "employment_status": "Yes, full time",
-    "served": "No"
-},{
-    "name": "Jalissa smith",
-    "age": "31",
-    "gender": "Female",
-    "race": "Black or African American",
-    "education": "Some college, no degree",
-    "employment_status": "Yes, part time",
     "served": "No"
 },{
     "name": "Destiny Hardy",
@@ -662,4 +776,6 @@
     "education": "Some college, no degree",
     "employment_status": "No",
     "served": "No"
+}
+]
 }

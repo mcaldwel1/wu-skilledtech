@@ -23,6 +23,7 @@ def get_new_url(index, length, arr):
         return arr[0]
 
 preArray = []
+titleArray = []
 
 while c < course_Length:
 
@@ -40,40 +41,34 @@ while c < course_Length:
         course_Length -=1
         continue
 
-    def get_id(data1, sect):
-        for sect in data1:
-            if(data1[sect] == None):
-                data1[sect] == 0.1
-            else:
-                if("Pre-Course" in data1[sect]): return True
-
-    keyArray = []
-    sectionArray = []
-
-    if(parsed['sections'][0]['learningUnits']):
-        for item in list(parsed['sections'][0]['learningUnits'][0].keys()):
-            keyArray.append(item)
-
-    if(parsed['sections'][0]):
-        for item in list(parsed['sections'][0].keys()):
-            sectionArray.append(item)
-
     for a in parsed['sections']:
         for b in a:
             if(a[b] and 'Pre-Course' in a[b]):
                 preArray.append(a['learningUnits'][0]['id'])
+                titleArray.append(parsed['id'])
+            if(a[b] and 'precourse' in a[b]):
+                preArray.append(a['learningUnits'][0]['id'])
+                titleArray.append(parsed['id'])
+            if(a[b] and 'Post-Course' in a[b]):
+                preArray.pop()
             if(a[b] and b == 'learningUnits'):
-                i=0
                 for unit in a[b]:
-                    for item in keyArray:
-                        if(a[b][i][item] and 'Pre-Course' in a[b][i][item]):
-                            preArray.append(a[b][i]['id'])
-                    i+=1
+                    if(unit and 'Pre-Course' in unit):
+                        preArray.append(unit['id'])
+                        titleArray.append(parsed['id'])
+                    if(unit and 'precourse' in unit):
+                        preArray.append(unit['id'])
+                        titleArray.append(parsed['id'])
     c+=1
 
 """print(*courseArray, sep="\n")"""
 
-"""print('\n', preArray)"""
+print(courseArray)
+print(course_Length)
+
+print('\n', preArray)
+
+#find a duplicate pre-course id's and remove them from pre-array
 
 def find_duplicates(arr):
     seen = set()
@@ -96,13 +91,22 @@ def remove_duplicates(arr, main):
     return main
 
 preArray = remove_duplicates(find_duplicates(preArray), preArray)
+titleArray = remove_duplicates(find_duplicates(titleArray), titleArray)
 
 id_length = len(preArray)
 
+print("\n", titleArray)
+
+#some pre-course assessments aren't populated, haven't been set up, or have no user responses 
+#these assessment id's will be removed from pre-array 
+
+false_id_list = []
 false_list = []
 d=0
 
-def make_call(index, i, length, array):
+#make calls to all pre-course assessment id's in pre-array
+
+def make_call(i, length, array):
     fetchUrl_2 = "https://www.wu-skilledtech.com/admin/api/v2/assessments/" + get_new_url(i, length, array) + "/responses"
 
     response = requests.get(url=fetchUrl_2, 
@@ -113,16 +117,17 @@ def make_call(index, i, length, array):
     parsed = response.json()
 
     if(not response):
-        false_list.append(index)
+        false_list.append(i)
+        """false_list.append(get_new_url(i, length, array))"""
 
     return parsed
 
 
 while d < id_length:
-    parsed = make_call(d, d, id_length, preArray)
+    parsed = make_call(d, id_length, preArray)
     d+=1
 
-"""print("\n", "list of no response surveys: ", false_list)"""
+print("\n", "list of no response surveys: ", false_list)
 
 index = (len(false_list) - 1)
 for a in false_list:
@@ -131,9 +136,12 @@ for a in false_list:
 
 """print("\n", preArray)"""
 
-global participant_arr
+
+global participant_arr      #global in case need to use variable in jupyter notebook
 participant_arr = []
 
+#class to define properties of each user who completed the pre-course array
+ 
 class participant:
     def __init__(self, name, age, gender, race, education, employment_status, served):
         self.name = name
@@ -147,13 +155,15 @@ class participant:
     def format_json(self):
         return json.dumps(self.__dict__, indent=4)
 
+#object make for each user 
+#all properties are strings except for 'age' 
 def make_p():
     p = participant("a", 0, "a", "a", "a", "a", "a")
     return p
 
 for a in preArray:
     ay = preArray
-    result = make_call(ay.index(a), ay.index(a), len(ay), ay)
+    result = make_call(ay.index(a), len(ay), ay)
     for b in result['data']:
         pa = make_p()
         flag = 0
@@ -182,8 +192,7 @@ for a in preArray:
             if(re.match(r'.*[Aa]ctive [Dd]uty', (c['description']))): 
                 pa.served = c['answer']
                 flag+=1
-
-        if(flag == 7): participant_arr.append(pa)
+        if(flag >= 2): participant_arr.append(pa)
 
 print(len(participant_arr))
 
@@ -195,9 +204,22 @@ for a in participant_arr:
     
 
 data_file = open('data.json', 'w')
+data_file.write('{')
+data_file.write('\n')
+data_file.write('"data" : [')
+data_file.write('\n')
+z = 0
 for x in json_arr:
-    data_file.write(x)
-    data_file.write(",")
+    if(z < (len(participant_arr) - 1)):
+        data_file.write(x)
+        data_file.write(",")
+    elif(z == (len(participant_arr) - 1)): 
+        data_file.write(x)
+    z+=1
+data_file.write('\n')
+data_file.write(']')
+data_file.write('\n')
+data_file.write('}')
 data_file.close()
 
 
