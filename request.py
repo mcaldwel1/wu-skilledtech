@@ -1,12 +1,13 @@
 import requests 
 import json
 import re
+import sys
 
 courseArray = []
 
 response = requests.get(url="https://www.wu-skilledtech.com/admin/api/v2/courses", 
-    headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
-            "Lw-Client": "647a25ef09b3e9a6f00aa290",
+    headers={"Authorization": sys.argv[1], 
+            "Lw-Client": sys.argv[2],
             "Accept": "application/json"})
 prsd = response.json()
 
@@ -16,22 +17,24 @@ for a in (prsd['data']):
 course_Length = len(courseArray)
 c = 0
 
+#function to get course id to insert into fetchUrl 
 def get_new_url(index, length, arr): 
     if(index < length):
         return arr[index]
     else: 
         return arr[0]
 
-preArray = []
-titleArray = []
+preArray = []           #array to hold id's of Pre-Course surveys
+titleArray = []         #array to hold titles of Pre-Course surveys
 
+#loop to get all Pre-Course survey id's 
 while c < course_Length:
 
     fetchUrl = "https://www.wu-skilledtech.com/admin/api/v2/courses/" + get_new_url(c, course_Length, courseArray) + "/contents"
 
     response = requests.get(url=fetchUrl, 
-        headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
-                "Lw-Client": "647a25ef09b3e9a6f00aa290",
+        headers={"Authorization": sys.argv[1], 
+                "Lw-Client": sys.argv[2],
                 "Accept": "application/json"})
 
     parsed = response.json()
@@ -61,15 +64,7 @@ while c < course_Length:
                         titleArray.append(parsed['id'])
     c+=1
 
-"""print(*courseArray, sep="\n")"""
-
-print(courseArray)
-print(course_Length)
-
-print('\n', preArray)
-
-#find a duplicate pre-course id's and remove them from pre-array
-
+#function to catch any duplicate id's
 def find_duplicates(arr):
     seen = set()
     duplicates = set()
@@ -82,8 +77,8 @@ def find_duplicates(arr):
     
     return list(duplicates)
 
-"""print("\n", "duplicates: ", find_duplicates(preArray))"""
 
+#function to remove found duplicates 
 def remove_duplicates(arr, main):
     for a in arr:
         for b in main:
@@ -95,53 +90,44 @@ titleArray = remove_duplicates(find_duplicates(titleArray), titleArray)
 
 id_length = len(preArray)
 
-print("\n", titleArray)
-
 #some pre-course assessments aren't populated, haven't been set up, or have no user responses 
 #these assessment id's will be removed from pre-array 
 
 false_id_list = []
 false_list = []
-d=0
 
 #make calls to all pre-course assessment id's in pre-array
-
 def make_call(i, length, array):
     fetchUrl_2 = "https://www.wu-skilledtech.com/admin/api/v2/assessments/" + get_new_url(i, length, array) + "/responses"
 
     response = requests.get(url=fetchUrl_2, 
-        headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
-                "Lw-Client": "647a25ef09b3e9a6f00aa290",
+        headers={"Authorization": sys.argv[1], 
+                "Lw-Client": sys.argv[2],
                 "Accept": "application/json"})
 
     parsed = response.json()
 
     if(not response):
         false_list.append(i)
-        """false_list.append(get_new_url(i, length, array))"""
 
     return parsed
 
-
+d=0 
 while d < id_length:
     parsed = make_call(d, id_length, preArray)
     d+=1
 
-print("\n", "list of no response surveys: ", false_list)
-
+#decrementing array to remove Pre-Course id's with no responses/values
 index = (len(false_list) - 1)
 for a in false_list:
     preArray.pop(false_list[index])
     index-= 1
-
-"""print("\n", preArray)"""
 
 
 global participant_arr      #global in case need to use variable in jupyter notebook
 participant_arr = []
 
 #class to define properties of each user who completed the pre-course array
- 
 class participant:
     def __init__(self, name, age, gender, race, education, employment_status, served):
         self.name = name
@@ -169,13 +155,22 @@ for a in preArray:
         flag = 0
         for c in b['answers']:
             if(re.match(r'.*[Nn]ame$|.*[Ff]irst and [Ll]ast', (c['description']))):
-                pa.name = c['answer']
+                if(c['answer']):
+                    pa.name = c['answer']
+                else:
+                    pa.name = 'not specified'
                 flag+=1
             if(re.match(r'[Aa]ge', (c['description']))):
-                pa.age = c['answer']
+                if(c['answer']):
+                    pa.age = c['answer']
+                else:
+                    pa.age = 'not specified'
                 flag+=1
             if(re.match(r'[Gg]ender', (c['description']))):
-                pa.gender = c['answer']
+                if(c['answer']):
+                    pa.gender = c['answer']
+                else:
+                    pa.gender = 'not specified'
                 flag+=1
             if(re.match(r'.*[Rr]ace', (c['description']))):
                 if(c['answer']):
@@ -184,25 +179,37 @@ for a in preArray:
                     pa.race = 'not specified'
                 flag+=1
             if(re.match(r'.*[Ss]chool|[Ee]ducation', (c['description']))):
-                pa.education = c['answer']
+                if(c['answer']):
+                    pa.education = c['answer']
+                else:
+                    pa.education = 'not specified'
                 flag+=1
             if(re.match(r'.*[Cc]urrently [Ee]mployed', (c['description']))): 
-                pa.employment_status = c['answer']
+                if(c['answer']):
+                    pa.employment_status = c['answer']
+                else:
+                    pa.employment_status = 'not specified'
                 flag+=1
             if(re.match(r'.*[Aa]ctive [Dd]uty', (c['description']))): 
-                pa.served = c['answer']
+                if(c['answer']):
+                    pa.served = c['answer']
+                else:
+                    pa.served = 'not specified'
                 flag+=1
         if(flag >= 2): participant_arr.append(pa)
 
-print(len(participant_arr))
+print(len(participant_arr))         #Users who filled out at least 2 fields of the pre-course survey
+#Does not represent total number of users in the wu-skilledtech program 
 
 json_arr = []
 
+#format data into a json payload for easy reading 
 for a in participant_arr:
     a = a.format_json()
     json_arr.append(a)
     
 
+#Write data to data.json file 
 data_file = open('data.json', 'w')
 data_file.write('{')
 data_file.write('\n')
@@ -221,12 +228,4 @@ data_file.write(']')
 data_file.write('\n')
 data_file.write('}')
 data_file.close()
-
-
-
-
-
-
-
-
 

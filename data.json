@@ -315,7 +315,7 @@
 },{
     "name": "Shyanna",
     "age": "22",
-    "gender": null,
+    "gender": "not specified",
     "race": "Black or African American",
     "education": "Some college, no degree",
     "employment_status": "No",
