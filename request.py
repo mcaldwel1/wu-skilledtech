@@ -1,7 +1,9 @@
 import requests 
+from requests.adapters import HTTPAdapter
+from urllib3.util import Retry
 import json
 import re
-import sys
+import sys 
 
 courseArray = []
 
@@ -9,13 +11,21 @@ response = requests.get(url="https://www.wu-skilledtech.com/admin/api/v2/courses
     headers={"Authorization": sys.argv[1], 
             "Lw-Client": sys.argv[2],
             "Accept": "application/json"})
-prsd = response.json()
+
+if(response.ok):
+    prsd = response.json()
+else:
+    print(response.raise_for_status)
 
 for a in (prsd['data']):
     courseArray.append(a['id'])
 
+print(courseArray)
+
 course_Length = len(courseArray)
 c = 0
+
+print(course_Length)
 
 #function to get course id to insert into fetchUrl 
 def get_new_url(index, length, arr): 
@@ -90,6 +100,8 @@ titleArray = remove_duplicates(find_duplicates(titleArray), titleArray)
 
 id_length = len(preArray)
 
+print(preArray)
+
 #some pre-course assessments aren't populated, haven't been set up, or have no user responses 
 #these assessment id's will be removed from pre-array 
 
@@ -97,25 +109,47 @@ false_id_list = []
 false_list = []
 
 #make calls to all pre-course assessment id's in pre-array
-def make_call(i, length, array):
+#separated into before and after for load handling 
+def make_call_before(i, length, array):
     fetchUrl_2 = "https://www.wu-skilledtech.com/admin/api/v2/assessments/" + get_new_url(i, length, array) + "/responses"
 
     response = requests.get(url=fetchUrl_2, 
-        headers={"Authorization": sys.argv[1], 
-                "Lw-Client": sys.argv[2],
-                "Accept": "application/json"})
+        headers={'Authorization': sys.argv[1], 
+                'Lw-Client': sys.argv[2],
+                'Accept': 'application/json'})
+    try:
+        retry = Retry(
+            total=4,
+            backoff_factor=0.2,
+            status_forcelist=[429, 500, 502, 503, 504],
+        )
+
+        adapter = HTTPAdapter(max_retries=retry)
+
+        session = requests.Session()
+        session.mount('https://', adapter)
+        r = session.get('https://httpbin.org/status/502', timeout=180)
+        print(r.status_code)
+
+    except Exception as e:
+        print(e)
 
     parsed = response.json()
 
-    if(not response):
+    if(response.ok):
+        print(i)
+    else:
+        print(response)
         false_list.append(i)
-
+    
     return parsed
 
 d=0 
-while d < id_length:
-    parsed = make_call(d, id_length, preArray)
+while d < (id_length):
+    make_call_before(d, (id_length), preArray)
     d+=1
+
+print(false_list)
 
 #decrementing array to remove Pre-Course id's with no responses/values
 index = (len(false_list) - 1)
@@ -123,6 +157,41 @@ for a in false_list:
     preArray.pop(false_list[index])
     index-= 1
 
+print(preArray)
+
+def make_call_after(i, length, array):
+    fetchUrl_2 = "https://www.wu-skilledtech.com/admin/api/v2/assessments/" + get_new_url(i, length, array) + "/responses"
+
+    response = requests.get(url=fetchUrl_2, 
+        headers={'Authorization': sys.argv[1], 
+                'Lw-Client': sys.argv[2],
+                'Accept': 'application/json'})
+    """try:
+        retry = Retry(
+            total=4,
+            backoff_factor=0.2,
+            status_forcelist=[429, 500, 502, 503, 504],
+        )
+
+        adapter = HTTPAdapter(max_retries=retry)
+
+        session = requests.Session()
+        session.mount('https://', adapter)
+        r = session.get('https://httpbin.org/status/502', timeout=180)
+        print(r.status_code)
+
+    except Exception as e:
+        print(e)"""
+
+    parsed = response.json()
+
+    """if(response.ok):
+        print(i)
+    else:
+        print(response)
+        false_list.append(i)"""
+    
+    return parsed
 
 global participant_arr      #global in case need to use variable in jupyter notebook
 participant_arr = []
@@ -149,54 +218,55 @@ def make_p():
 
 for a in preArray:
     ay = preArray
-    result = make_call(ay.index(a), len(ay), ay)
-    for b in result['data']:
-        pa = make_p()
-        flag = 0
-        for c in b['answers']:
-            if(re.match(r'.*[Nn]ame$|.*[Ff]irst and [Ll]ast', (c['description']))):
-                if(c['answer']):
-                    pa.name = c['answer']
-                else:
-                    pa.name = 'not specified'
-                flag+=1
-            if(re.match(r'[Aa]ge', (c['description']))):
-                if(c['answer']):
-                    pa.age = c['answer']
-                else:
-                    pa.age = 'not specified'
-                flag+=1
-            if(re.match(r'[Gg]ender', (c['description']))):
-                if(c['answer']):
-                    pa.gender = c['answer']
-                else:
-                    pa.gender = 'not specified'
-                flag+=1
-            if(re.match(r'.*[Rr]ace', (c['description']))):
-                if(c['answer']):
-                    pa.race = c['answer']
-                else:
-                    pa.race = 'not specified'
-                flag+=1
-            if(re.match(r'.*[Ss]chool|[Ee]ducation', (c['description']))):
-                if(c['answer']):
-                    pa.education = c['answer']
-                else:
-                    pa.education = 'not specified'
-                flag+=1
-            if(re.match(r'.*[Cc]urrently [Ee]mployed', (c['description']))): 
-                if(c['answer']):
-                    pa.employment_status = c['answer']
-                else:
-                    pa.employment_status = 'not specified'
-                flag+=1
-            if(re.match(r'.*[Aa]ctive [Dd]uty', (c['description']))): 
-                if(c['answer']):
-                    pa.served = c['answer']
-                else:
-                    pa.served = 'not specified'
-                flag+=1
-        if(flag >= 2): participant_arr.append(pa)
+    result = make_call_after(ay.index(a), len(ay), ay)
+    if(result):
+        for b in result['data']:
+            pa = make_p()
+            flag = 0
+            for c in b['answers']:
+                if(re.match(r'.*[Nn]ame$|.*[Ff]irst and [Ll]ast', (c['description']))):
+                    if(c['answer']):
+                        pa.name = c['answer']
+                    else:
+                        pa.name = 'not specified'
+                    flag+=1
+                if(re.match(r'[Aa]ge', (c['description']))):
+                    if(c['answer']):
+                        pa.age = c['answer']
+                    else:
+                        pa.age = 'not specified'
+                    flag+=1
+                if(re.match(r'[Gg]ender', (c['description']))):
+                    if(c['answer']):
+                        pa.gender = c['answer']
+                    else:
+                        pa.gender = 'not specified'
+                    flag+=1
+                if(re.match(r'.*[Rr]ace', (c['description']))):
+                    if(c['answer']):
+                        pa.race = c['answer']
+                    else:
+                        pa.race = 'not specified'
+                    flag+=1
+                if(re.match(r'.*[Ss]chool|[Ee]ducation', (c['description']))):
+                    if(c['answer']):
+                        pa.education = c['answer']
+                    else:
+                        pa.education = 'not specified'
+                    flag+=1
+                if(re.match(r'.*[Cc]urrently [Ee]mployed', (c['description']))): 
+                    if(c['answer']):
+                        pa.employment_status = c['answer']
+                    else:
+                        pa.employment_status = 'not specified'
+                    flag+=1
+                if(re.match(r'.*[Aa]ctive [Dd]uty', (c['description']))): 
+                    if(c['answer']):
+                        pa.served = c['answer']
+                    else:
+                        pa.served = 'not specified'
+                    flag+=1
+            if(flag >= 2): participant_arr.append(pa)
 
 print(len(participant_arr))         #Users who filled out at least 2 fields of the pre-course survey
 #Does not represent total number of users in the wu-skilledtech program 
