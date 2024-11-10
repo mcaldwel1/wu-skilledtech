@@ -1,13 +1,14 @@
 import requests 
 import json
 import re
+import sys
 
 all_users = []
 
 def per_page(page):
     response = requests.get(url="https://www.wu-skilledtech.com/admin/api/v2/users", 
-    headers={"Authorization": "Bearer AunFTUso15kMMpqHTyfm8CdZ6HRRjvrhkwtoUCWz", 
-            "Lw-Client": "647a25ef09b3e9a6f00aa290",
+    headers={"Authorization": sys.argv[1], 
+            "Lw-Client": sys.argv[2],
             "Accept": "application/json"},
     params={"items_per_page": "200",
             "page": page})
